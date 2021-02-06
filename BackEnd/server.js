@@ -22,13 +22,77 @@
 
 const express=require('express');
 
+const db = require('./demo_db_connection');
+
 const app=express(),
 	  bodyParser=require("body-parser");
-	  port=3080;
+	  port=3100;
 
-app.listen(3080,()=>{
-	console.log('server is listening in port 3080')
+
+
+app.use(bodyParser.urlencoded({
+	extended:true
+
+}));
+
+app.use(bodyParser.json());
+
+const fake_database=['Mike'];
+
+
+
+app.set("view egnine","ejs");
+
+
+app.get("/",(request,response)=>{
+
+	response.json('rick');
+
 });
+
+app.get("/Users",(request,response)=>{
+
+	
+	db.query("SELECT * FROM players", function (err, result) {
+    if (err) throw err;
+    console.log("i am inside server")
+    console.log(result);
+    response.send(result);
+
+});
+
+
+});
+
+app.post("/newuser",(request,response)=>{
+  var sql = "INSERT INTO players (id,player,chance1,chance2,chance3,chance4,chance5) VALUES (6, 'player7',1,2,3,4,5)";
+  db.query(sql, function (err, result) {
+   if (err) throw err;
+   console.log("1 record inserted");
+
+  });
+});
+
+app.listen(3100,()=>{
+	console.log('server is listening in port 3100')
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

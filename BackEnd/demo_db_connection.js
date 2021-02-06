@@ -9,6 +9,8 @@ var db = mysql.createConnection({
   database:"Lottery"
 });
 
+//create a Mysql Pool
+
 db.connect(function(err) {
   if (err) throw err;
   console.log("Connected!");
@@ -25,11 +27,12 @@ db.connect(function(err) {
   // });
 
 
-  db.query("SELECT * FROM players", function (err, result, fields) {
-    if (err) throw err;
-    console.log(result);
-});
+//   db.query("SELECT * FROM players", function (err, result, fields) {
+//     if (err) throw err;
+//     console.log(result);
+// });
 
+module.exports = db;
 
 
 
