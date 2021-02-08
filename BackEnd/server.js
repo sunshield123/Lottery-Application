@@ -79,6 +79,8 @@ app.post("/ping", function (req, res) {
     console.log(this.Input.chance3)
     console.log(this.Input.chance4)
     console.log(this.Input.chance5)
+    console.log(this.Input.date)
+    console.log(this.Input.TimeStamp)
 
 
       var sql = "select id from players ORDER BY id DESC LIMIT 1;";
@@ -100,7 +102,7 @@ app.post("/ping", function (req, res) {
 
       // console.log("outside sql current row  "+this.current_id)
     function Test(input){
-      var sql = "INSERT INTO players (id,chance1,chance2,chance3,chance4,chance5) VALUES ('" + input + "','" +this.Input.chance1+ "','" +this.Input.chance2+ "','" +this.Input.chance3+ "','" +this.Input.chance4+ "','" +this.Input.chance5+ "')";
+      var sql = "INSERT INTO players (id,chance1,chance2,chance3,chance4,chance5,date,TimeStamp) VALUES ('" + input + "','" +this.Input.chance1+ "','" +this.Input.chance2+ "','" +this.Input.chance3+ "','" +this.Input.chance4+ "','" +this.Input.chance5+ "','" +this.Input.date+ "','" +this.Input.TimeStamp+ "')";
         db.query(sql, function (err, result) {
        if (err) throw err;
        console.log("1 record inserted");

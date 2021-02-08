@@ -38,9 +38,10 @@
 	<ul *ngFor="let d of data">
 		
 		<!-- {{d.player}} -->
-		<li>Numbers appeared in - {{d.id}} Round</li>
+		<li>Below are Numbers appeared in <b> {{d.id}} Round </b>on <b>Date {{d.Date}} </b> and <b>Time {{d.TimeStamp}} </b></li>
 		<br>
 	<div class="form-group d-flex flex-row">
+
 		<input type="number" name="num1" class="form-control" value={{d.chance1}} readonly="readonly">
 		<input type="number" name="num2" class="form-control" value={{d.chance2}} readonly="readonly">
 		<input type="number" name="num3" class="form-control" value={{d.chance3}} readonly="readonly">

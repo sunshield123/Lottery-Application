@@ -2,19 +2,48 @@
 	This project is called Lottery App</h2>
 
 
-<p>
+<h3>
 	The app is written in TypeScript on <a href="https://angular.io">Angular</a> framework and the backend is written in Node JS on <a href="https://nodejs.org/en/">Node</a>.
 
-</p>
+</h3>
 <h3>The Project have following Features</h3>
 	<ul>
-		<li>When Click Lets Play,Diplays 5 unique Number</li>
-		<li>When Click Draw History,Diplays all previous Play</li>
+		<li><h3>When Click Lets Play,Diplays 5 unique Number</h3></li>
+		<li><h3>When Click Draw History,Diplays all previous Play</h3></li>
 
 
 
 	</ul>
-<p> 
+<h3> 
 	Backend server is hosted on <a href="http://localhost:3200">localhost:3200</a> and Frontend is running on the <a href="http://localhost:4200">localhost:4200</a>
-</p>
+</h3>
 
+<br>
+
+<h3>Commands to run the application</h3>
+<figure class="highlight">
+	<code>
+		<pre>
+<h3><b>Angular Application:ng serve </b></h3>
+
+<h3><b>Node API :node Server.js</b></h3>
+		</pre>
+	</code>
+</figure>
+<br>
+<h2>The DataBase</h2>
+
+<h3>The Data base used for the Application is <b>mySQL</b>. I used local Database for the System . And Node API is accessing these Database through Queries.</h3>
+
+<h2>Queries to Build Database</h2>
+
+<figure class="highlight">
+	<code>
+		<pre>
+<h3><b>Name of the Database:USE Lottery; </b></h3>
+
+<h3><b>Table Name :Players <br/>
+ To Create Table- CREATE TABLE players (id INT,chance1 INT,chance2 INT,chance3 INT,chance4 INT,chance5 INT);<br/>
+ID Uniqueness -ALTER TABLE players ADD UNIQUE (id);</b></h3>
+		</pre>
+	</code>

@@ -30,10 +30,15 @@ constructor(
 
 }
 
-
-
+today=new Date();
+test1=this.today.toString()
+Lotterydate=this.test1.slice(4,16);
+LotteryTime=this.test1.slice(16,25);
+// console.log(today)
+// Time=current.toLocaleTimeString(); 
+// Date=current.toLocaleDateString();
 // Function for CALL SERVER
-
+// let dateTime = new Date()
 
 
 user = {};
@@ -42,7 +47,7 @@ user = {};
 
   callServer() {
   	
-  	this.user={id:7,chance1:this.result,chance2:this.result1,chance3:this.result2,chance4:this.result3,chance5:this.result4};
+  	this.user={id:7,chance1:this.result,chance2:this.result1,chance3:this.result2,chance4:this.result3,chance5:this.result4,date:this.Lotterydate,TimeStamp:this.LotteryTime};
   	console.log("call callServer")
     const headers = new HttpHeaders()
           .set('Authorization', 'my-auth-token')
