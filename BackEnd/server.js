@@ -41,7 +41,7 @@ app.use(bodyParser.json());
 const fake_database=['Mike'];
 
 var Input={}
-
+var current_id=0;
 app.set("view egnine","ejs");
 
 
@@ -65,38 +65,48 @@ app.get("/Users",(request,response)=>{
 
 });
 
-// app.post("/newuser",(request,response)=>{
-//   var sql = "INSERT INTO players (id,player,chance1,chance2,chance3,chance4,chance5) VALUES (6, 'player7',1,2,3,4,5)";
-//   db.query(sql, function (err, result) {
-//    if (err) throw err;
-//    console.log("1 record inserted");
-
-//   });
-// });
 
 app.post("/ping", function (req, res) {
   // res.send(req.body)
-  console.log(req.body);
-  this.Input=req.body;
-  console.log("entering the sql");
-  console.log(this.Input.id);
-// this.Input.id,this.Input.player,this.Input.chance1,this.Input.chance2,this.Input.chance3,this.Input.chance4,this.Input.chance5
-console.log(this.Input.id)
-console.log(this.Input.player)
-console.log(this.Input.chance1)
-console.log(this.Input.chance2)
-console.log(this.Input.chance3)
-console.log(this.Input.chance4)
-console.log(this.Input.chance5)
-var id=8
-var player="player8"
+      console.log(req.body);
+      this.Input=req.body;
+      console.log("entering the sql");
+      console.log(this.Input.id);
+    // this.Input.id,this.Input.player,this.Input.chance1,this.Input.chance2,this.Input.chance3,this.Input.chance4,this.Input.chance5
+    console.log(this.Input.id)
+    console.log(this.Input.chance1)
+    console.log(this.Input.chance2)
+    console.log(this.Input.chance3)
+    console.log(this.Input.chance4)
+    console.log(this.Input.chance5)
 
-  var sql = "INSERT INTO players (id,player,chance1,chance2,chance3,chance4,chance5) VALUES ('" +this.Input.id+ "','" +this.Input.player+ "','" +this.Input.chance1+ "','" +this.Input.chance2+ "','" +this.Input.chance3+ "','" +this.Input.chance4+ "','" +this.Input.chance5+ "')";
-    db.query(sql, function (err, result) {
-   if (err) throw err;
-   console.log("1 record inserted");
 
-  });
+      var sql = "select id from players ORDER BY id DESC LIMIT 1;";
+      db.query(sql, function (err, result) {
+         if (err) throw err;
+         console.log("Inside SQL last row   "+result[0].id);
+         this.current_id=result[0].id+1;
+         console.log("Inside SQL current row "+this.current_id)
+         Test(this.current_id)
+      //   var sql = "INSERT INTO players (id,player,chance1,chance2,chance3,chance4,chance5) VALUES ('" + this.current_id+ "','" +this.Input.player+ "','" +this.Input.chance1+ "','" +this.Input.chance2+ "','" +this.Input.chance3+ "','" +this.Input.chance4+ "','" +this.Input.chance5+ "')";
+      //   db.query(sql, function (err, result) {
+      //  if (err) throw err;
+      //  console.log("1 record inserted");
+
+      // });
+        // console.log("Information of Input "+this.Input.player)
+      });
+
+
+      // console.log("outside sql current row  "+this.current_id)
+    function Test(input){
+      var sql = "INSERT INTO players (id,chance1,chance2,chance3,chance4,chance5) VALUES ('" + input + "','" +this.Input.chance1+ "','" +this.Input.chance2+ "','" +this.Input.chance3+ "','" +this.Input.chance4+ "','" +this.Input.chance5+ "')";
+        db.query(sql, function (err, result) {
+       if (err) throw err;
+       console.log("1 record inserted");
+
+      });
+      }
 
 }) 
 

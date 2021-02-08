@@ -20,6 +20,8 @@ db.connect(function(err) {
 
 
 
+
+
   // var sql = "INSERT INTO players (id,player,chance1,chance2,chance3,chance4,chance5) VALUES (5, 'player6',1,2,3,4,5)";
   // db.query(sql, function (err, result) {
   //  if (err) throw err;

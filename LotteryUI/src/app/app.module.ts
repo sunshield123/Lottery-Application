@@ -14,12 +14,14 @@ import { MatListModule } from '@angular/material/list';
 import { LotterydrawComponent } from './lotterydraw/lotterydraw.component'
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
+import { AboutComponent } from './about/about.component';
 // import {Observable} from 'rxjs';
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
-    LotterydrawComponent
+    LotterydrawComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

@@ -27,15 +27,6 @@ constructor(
 	private http: HttpClient,private DrawHistory:DrawHistoryService) { 
 	this.data=new Array<any>()
 
-// this.http.get(this.url).toPromise().then(data=>{
-
-
-
-
-// 	console.log(data);
-// });
-// })
-
 
 }
 
@@ -48,8 +39,10 @@ constructor(
 user = {};
 
 
+
   callServer() {
-  	this.user={id:9,player:"player9",chance1:this.result,chance2:this.result1,chance3:this.result2,chance4:this.result3,chance5:this.result4};
+  	
+  	this.user={id:7,chance1:this.result,chance2:this.result1,chance3:this.result2,chance4:this.result3,chance5:this.result4};
   	console.log("call callServer")
     const headers = new HttpHeaders()
           .set('Authorization', 'my-auth-token')
