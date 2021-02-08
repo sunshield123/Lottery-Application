@@ -21,8 +21,4 @@ export class DrawHistoryService {
   	return this.http.get<any>(url)
   }
 
-
-
-
-
 }
