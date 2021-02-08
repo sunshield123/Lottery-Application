@@ -13,6 +13,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { LotterydrawComponent } from './lotterydraw/lotterydraw.component'
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule} from '@angular/common/http';
+// import {Observable} from 'rxjs';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +31,10 @@ import { FormsModule } from '@angular/forms';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    // Observable
+
   ],
   providers: [],
   bootstrap: [AppComponent]
