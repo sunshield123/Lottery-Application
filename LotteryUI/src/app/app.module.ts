@@ -14,14 +14,13 @@ import { LotterydrawComponent } from './lotterydraw/lotterydraw.component'
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
 import { AboutComponent } from './about/about.component';
-import { HomeComponent } from './home/home.component';
+
 // import {Observable} from 'rxjs';
 @NgModule({
   declarations: [
     AppComponent,
     LotterydrawComponent,
-    AboutComponent,
-    HomeComponent
+    AboutComponent
   ],
   imports: [
     BrowserModule,
